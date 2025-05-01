@@ -34,8 +34,15 @@ public class AlunoController {
     return service.getAll(dataDeNacimento);
   }
 
-  @PostMapping("/update")
-  public Aluno update(@RequestParam Aluno id, @RequestBody AlunoUpdateForm formUpdate){ return service.update(id.getId(), formUpdate);}
+  @PutMapping("/update")
+  public Aluno update(@RequestParam Aluno id, @RequestBody AlunoUpdateForm formUpdate){
+    return service.update(id.getId(), formUpdate);
+  }
+
+  @DeleteMapping("/delete")
+  public Aluno delete(@RequestParam Long id){ return service.delete(id);}
+
+
 
 
 }

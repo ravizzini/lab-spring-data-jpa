@@ -40,9 +40,11 @@ public interface IAlunoService {
 
   /**
    * Deleta um Aluno específico.
+   *
    * @param id id do Aluno que será removido.
+   * @return
    */
-  void delete(Long id);
+  Aluno delete(Long id);
 
   /**
    *
