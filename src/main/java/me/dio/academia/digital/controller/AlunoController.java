@@ -20,7 +20,7 @@ public class AlunoController {
 
   @PostMapping
   public Aluno create(@Valid @RequestBody AlunoForm form) {
-    return service.create(form);
+        return service.create(form);
   }
 
   @GetMapping("/avaliacoes/{id}")
@@ -34,13 +34,21 @@ public class AlunoController {
     return service.getAll(dataDeNacimento);
   }
 
+  @GetMapping("/aluno/{id}")
+  public Aluno get(@PathVariable Long id){
+    return service.get(id);
+  }
+
+
   @PutMapping("/update")
   public Aluno update(@RequestParam Aluno id, @RequestBody AlunoUpdateForm formUpdate){
     return service.update(id.getId(), formUpdate);
   }
 
   @DeleteMapping("/delete")
-  public Aluno delete(@RequestParam Long id){ return service.delete(id);}
+  public Aluno delete(@RequestParam Long id){
+    return service.delete(id);
+  }
 
 
 
