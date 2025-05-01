@@ -28,8 +28,10 @@ public interface IMatriculaService {
 
   /**
    * Deleta uma Matrícula específica.
+   *
    * @param id - id da Matrícula que será removida.
+   * @return
    */
-  void delete(Long id);
+  Matricula delete(Long id);
 
 }

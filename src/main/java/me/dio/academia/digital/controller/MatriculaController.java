@@ -18,12 +18,23 @@ public class MatriculaController {
 
   @PostMapping
   public Matricula create(@Valid @RequestBody MatriculaForm form) {
+
     return service.create(form);
   }
 
   @GetMapping
   public List<Matricula> getAll(@RequestParam(value = "bairro", required = false) String bairro) {
     return service.getAll(bairro);
+  }
+
+  @GetMapping("/matricula/{id}")
+  public Matricula get(@PathVariable Long id){
+    return service.get(id);
+  }
+
+  @DeleteMapping("/delete")
+  public Matricula delete(@RequestParam Long id){
+    return service.delete(id);
   }
 
 }
