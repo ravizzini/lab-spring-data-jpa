@@ -24,6 +24,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
   @Override
   public AvaliacaoFisica create(AvaliacaoFisicaForm form) {
     AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
+    //TRATAR EXCECAO CASO NAO ENCONTRE O ALUNO
     Aluno aluno = alunoRepository.findById(form.getAlunoId()).get();
 
     avaliacaoFisica.setAluno(aluno);
@@ -46,7 +47,12 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
   @Override
   public AvaliacaoFisica update(Long id, AvaliacaoFisicaUpdateForm formUpdate) {
-    return null;
+
+    AvaliacaoFisica avaliacaoFisica = avaliacaoFisicaRepository.getById(id);
+    avaliacaoFisica.setPeso(formUpdate.getPeso());
+    avaliacaoFisica.setAltura(formUpdate.getAltura());
+
+    return avaliacaoFisicaRepository.save(avaliacaoFisica);
   }
 
   @Override
