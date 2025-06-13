@@ -1,5 +1,7 @@
 package me.dio.academia.digital.entity.form;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +13,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class AlunoForm {
 
   @NotEmpty(message = "Preencha o campo corretamente.")

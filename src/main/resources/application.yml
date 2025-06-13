@@ -1,17 +1,9 @@
-springdoc:
-  api-docs:
-    enabled: true # Habilita a documentação OpenAPI
-  swagger-ui:
-    enabled: true
-    url: /v3/api-docs # URL da definição OpenAPI (padrão)
-    configUrl: /v3/api-docs/swagger-config # URL da configuração do Swagger UI (padrão)
-    path: /swagger-ui # URL para acessar o Swagger UI
-
 server.port: 8081
 
-
-
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   datasource:
     url: jdbc:postgresql://localhost:5432/academia?useTimezone=true&serverTimezone=UTC&useLegacyDate
     username: postgres
